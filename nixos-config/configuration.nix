@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -83,7 +84,7 @@
     description = "Lam Dang";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -136,8 +137,8 @@
     fontconfig = {
       defaultFonts = {
         serif = [ "0xProto Nerd Font" ];
-	sansSerif = [ "0xProto Nerd Font" ];
-	monospace = [ "0xProto Nerd Font Mono" ];
+        sansSerif = [ "0xProto Nerd Font" ];
+        monospace = [ "0xProto Nerd Font Mono" ];
       };
     };
   };
