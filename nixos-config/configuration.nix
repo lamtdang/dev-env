@@ -45,6 +45,24 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    package = pkgs.i3-gaps; 
+  };
+
+  services.displayManager = {
+      defaultSession = "none+i3";
+  };
+  
+  systemd.user.services.setup_monitor = {
+      description = "Set up multiple monitor for i3";
+      script = ''
+        xrandr --output DP-2 --auto --left-of eDP-1
+      '';
+      wantedBy = ["multi-user.target"];
+
+    };
+
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;

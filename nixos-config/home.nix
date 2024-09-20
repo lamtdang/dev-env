@@ -11,7 +11,11 @@
     #terminal
     alacritty
     oh-my-zsh
-    fzf
+    fzf #Search Text
+    xorg.xrandr #multiple monitors
+
+    #ide
+    ripgrep #Search text
 
 
     #programming language
@@ -110,4 +114,10 @@
     source = ./../ide/nvim;
     recursive = true;
   };
+
+  home.file.".config/i3/" = {
+    source = ./../terminal/i3;
+    recursive = true;
+  };
+
 }

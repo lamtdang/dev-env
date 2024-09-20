@@ -25,7 +25,7 @@ return {
 
       {
         name = "mind-palace",
-        path = "~/Personal/mind-palace",
+        path = "~/personal/nous",
       },
     },
 
