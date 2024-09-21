@@ -109,6 +109,8 @@
       gcc
     ];
   };
+  
+  programs.lazygit.enable = true;
 
   home.file.".config/nvim/" = {
     source = ./../ide/nvim;
