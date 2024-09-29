@@ -32,6 +32,8 @@
 
     nodejs_22
     python3
+    luajit
+    luajitPackages.luarocks-nix
 
     #misc
     google-chrome
@@ -101,6 +103,7 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    withNodeJs = true;
     plugins = with pkgs.vimPlugins; [
       LazyVim
       nvim-treesitter
@@ -109,9 +112,23 @@
       gcc
     ];
   };
-  
+
+   
   programs.lazygit.enable = true;
 
+  
+
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs.tmuxPlugins; [
+      tmux-fzf
+    ];
+    extraConfig = ''
+        set-option -sg escape-time 10
+        set-option -g default-terminal "screen-256color"
+    '';
+  };
+ 
   home.file.".config/nvim/" = {
     source = ./../ide/nvim;
     recursive = true;
