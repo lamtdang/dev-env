@@ -26,10 +26,6 @@
 
     cargo
     unzip
-    #rustup
-    #rustc
-    #rustfmt
-
     nodejs_22
     python3
     luajit
@@ -41,6 +37,9 @@
 
     #devtools
     gh
+    docker_27
+    kubernetes
+    docker-compose
 
 
   ];
@@ -93,7 +92,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "golang" "kubectl" "sudo" ];
+      plugins = [ "git" "golang" "kubectl" "sudo" "docker" "docker-compose" ];
       theme = "af-magic";
     };
 

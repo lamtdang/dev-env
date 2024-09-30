@@ -103,7 +103,7 @@
   users.users.lamtdang = {
     isNormalUser = true;
     description = "Lam Dang";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -164,4 +164,5 @@
     };
   };
   programs.zsh.enable = true;
+  virtualisation.docker.enable = true;
 }
