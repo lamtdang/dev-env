@@ -119,12 +119,23 @@
 
   programs.tmux = {
     enable = true;
+    keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [
       tmux-fzf
     ];
+    shortcut = "z";
     extraConfig = ''
-        set-option -sg escape-time 10
-        set-option -g default-terminal "screen-256color"
+      set-option -sg escape-time 10
+      set-option -g default-terminal "screen-256color"
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+
+      bind-key J resize-pane -D 5
+      bind-key K resize-pane -U 5
+      bind-key H resize-pane -L 5
+      bind-key L resize-pane -R 5
     '';
   };
  
