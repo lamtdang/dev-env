@@ -50,6 +50,10 @@
     package = pkgs.i3-gaps; 
   };
 
+  console.useXkbConfig = true;
+  services.xserver.xkbOptions = "ctrl:swapcaps";
+  services.xserver.xkb.options = "ctrl:swapcaps";
+
   services.displayManager = {
       defaultSession = "none+i3";
   };

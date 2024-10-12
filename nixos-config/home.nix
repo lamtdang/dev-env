@@ -34,6 +34,7 @@
     #misc
     google-chrome
     obsidian
+    feh
 
     #devtools
     gh
