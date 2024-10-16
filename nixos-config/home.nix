@@ -139,7 +139,9 @@
       bind-key K resize-pane -U 5
       bind-key H resize-pane -L 5
       bind-key L resize-pane -R 5
-
+      set -g mouse on
+      set -g base-index 1
+      setw -g pane-base-index 1
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
       | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
       bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
